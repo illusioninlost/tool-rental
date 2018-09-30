@@ -20,4 +20,18 @@ class App extends Component {
   }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//     fetchCats: fetchCats,
+//   }, dispatch)
+// }
+
+
+// const mapStateToProps = state => {
+
+//   return { catsPics: state.cats.pictures };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App)
+
 export default App;
