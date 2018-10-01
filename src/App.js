@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap';
-import {connect} from 'react-redux';
+import { Navbar } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import './App.css';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 
 
 class App extends Component {
@@ -11,17 +11,23 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <ul>
-          <h1 className="App-title">Header</h1>
-          <li>link later</li>
+            <h1 className="App-title">Header</h1>
+            <li>link later</li>
           </ul>
         </header>
-      <div>Tools to rent. Save time and money. &#128296;</div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+        <div>Tools to rent. Save time and money. &#128296;</div>
+       
+        <footer className="page-footer font-small blue">
+
+
+          <div className="footer-copyright text-center py-3">© 2018 Copyright Tool Rental</div>
+
+
+        </footer>
+
+
       </div>
-      
+
     );
   }
 }
