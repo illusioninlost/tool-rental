@@ -16,13 +16,12 @@ class App extends Component {
           </ul>
         </header>
         <div>Tools to rent. Save time and money. &#128296;</div>
-       
+        <div>Picture  Picture Picture</div>
+        <div>Picture  Picture Picture</div>
+        <div>Picture  Picture Picture</div>
+        
         <footer className="page-footer font-small blue">
-
-
-          <div className="footer-copyright text-center py-3">© 2018 Copyright Tool Rental</div>
-
-
+        <div className="footer-copyright text-center py-3">© 2018 Copyright Tool Rental</div>
         </footer>
 
 
