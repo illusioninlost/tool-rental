@@ -3,16 +3,24 @@ import { connect } from 'react-redux';
 import './App.css';
 import { bindActionCreators } from 'redux';
 import Head from './components/head';
-import Motto from './containers/motto'
+import Motto from './containers/motto';
+import Tools from './components/tools';
+
+
+let tools = [
+  {id: 1, description: "hammer", price:"10/hr"},
+  {id: 2, description: "circular saw", price:"20/hr"}
+]
 
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
         <Head/>
         <Motto/>
         <hr/>
-        {/* <Tools tools={this.props}/> */}
+        <Tools tools={tools}/>
         <div className="cart">
         Cart side bar items should pop out after clicking 
         </div>
