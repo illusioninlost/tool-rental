@@ -11,14 +11,16 @@ class App extends Component {
       <div className="App">
         <Head/>
         <Motto/>
+        <hr/>
        
         <div className="cart">
         Cart side bar items should pop out after clicking 
         </div>
-        <div>Picture Content Picture Picture</div>
+        <div>Picture $10.00/hr
+          Content Picture Picture</div>
         <div>Picture  Picture Picture</div>
         <div>Picture  Picture Picture</div>
-        
+        <hr/>
         <footer className="page-footer font-small blue">
         <div className="footer-copyright text-center py-3">© 2018 Copyright Tool Rental</div>
         </footer>
