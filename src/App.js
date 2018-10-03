@@ -12,7 +12,7 @@ class App extends Component {
         <Head/>
         <Motto/>
         <hr/>
-       
+        {/* <Tools /> */}
         <div className="cart">
         Cart side bar items should pop out after clicking 
         </div>
