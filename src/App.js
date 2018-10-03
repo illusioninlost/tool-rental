@@ -35,7 +35,7 @@ class App extends Component {
        
         <div>Tools to rent. Save time and money. &#128296;</div>
         <div className="cart">
-        Cart side bar items should pop out after clicking <<
+        Cart side bar items should pop out after clicking 
         </div>
         <div>Picture Content Picture Picture</div>
         <div>Picture  Picture Picture</div>
