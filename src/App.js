@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import './App.css';
 import { bindActionCreators } from 'redux';
 import Head from './components/head';
+import Motto from './containers/motto'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Head/>
+        <Motto/>
        
-       
-        <div className="Motto">Tools to rent. Save time and money. &#128296;</div>
         <div className="cart">
         Cart side bar items should pop out after clicking 
         </div>
