@@ -16,16 +16,23 @@ class App extends Component {
   
   constructor(){
     super();
+    debugger
     
+    
+
     this.state={
       tools:[]
     }
   }
   //initial render then call component
   //import from actions
-  // componentDidMount(){
-  //   fetchTools()
-  // }
+   componentDidMount(){
+    
+    fetch("http://localhost:4000/tools")
+    .then(response => response.json())
+    .then(tools => console.log(tools))
+   }
+
   render() {
     return (
       <div className="App">
