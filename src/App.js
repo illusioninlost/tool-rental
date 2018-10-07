@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import { bindActionCreators } from 'redux';
 import Head from './components/head';
-import Motto from './containers/motto';
+import Motto from './components/motto';
 import Tools from './components/tools';
 
 
@@ -16,7 +16,6 @@ class App extends Component {
   
   constructor(){
     super();
-    debugger
     
     
 
@@ -30,7 +29,7 @@ class App extends Component {
     
     fetch("http://localhost:4000/tools")
     .then(response => response.json())
-    .then(tools => console.log(tools))
+    .then(tools => tools)
    }
 
   render() {
@@ -38,7 +37,7 @@ class App extends Component {
       <div className="App">
         <Head/>
         <Motto/>
-        <hr/>
+      
         <Tools tools={tools}/>
         <div className="cart">
         Cart side bar items should pop out after clicking 
