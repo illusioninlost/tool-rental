@@ -11,10 +11,11 @@ class Tools extends Component {
     }
 
     render() {
-        debugger
+        
         return(
             <div>
                 
+                img, price, description
             </div>
         )
     }
@@ -32,8 +33,8 @@ const mapDispatchToProps = (dispatch) => {
 
 
 const mapStateToProps = state => {
-
-  return { tools: state.tools };
+    console.log(state.tools.tools);
+  return { myTools: state.tools.tools };
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Tools)

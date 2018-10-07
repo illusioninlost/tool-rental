@@ -15,6 +15,6 @@ export function fetchTools(){
     return (dispatch) => {
       return fetch("http://localhost:4000/tools")
         .then(response => response.json())
-        .then(tools => console.log(tools));
+        .then(tools => dispatch({type:'LOAD_TOOLS', tools}));
     };
 };
