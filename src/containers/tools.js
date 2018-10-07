@@ -1,32 +1,29 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {fetchTools} from '../actions/toolActions'
 
 class Tools extends Component { 
-    constuctor(){
-        this.state={
-            tools: []
-        }
-    }
+   
 
     componentDidMount(){
-         fetch("http://localhost:4000/tools")
-        .then(response => response.json())
-        .then(tools => tools)
+        //  fetch("http://localhost:4000/tools")
+        // .then(response => response.json())
+        // .then(tools => console.log(tools))
+        this.props.fetchTools()
     }
 
     render() {
         return(
             <div>
-                Nothing
+               {console.log(this.props)}
             </div>
         )
     }
     
    
     
-//     const renderTools = tools.map(tool =>
-//     <p key={tool.id}>${tool.price}<br/> {tool.description}</p>)
+//     const renderTools = 
 //     return(
 //         <div>
 //             {renderTools}
@@ -35,18 +32,17 @@ class Tools extends Component {
 // }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     fetchCats: fetchCats,
-//   }, dispatch)
-// }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchTools: fetchTools,
+  }, dispatch)
+}
 
 
-// const mapStateToProps = state => {
+const mapStateToProps = state => {
 
-//   return { catsPics: state.cats.pictures };
-// }
+  return { tools: state.tools };
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(Tools)
 
-export default Tools

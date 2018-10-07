@@ -9,3 +9,12 @@
 //       .then(cats => dispatch({ type: 'FETCH_CATS', payload: cats.images }));
 //   };
 // };
+
+
+export function fetchTools(){
+    return (dispatch) => {
+      fetch("http://localhost:4000/tools")
+        .then(response => response.json())
+        .then(tools => dispatch({type: 'LOAD_TOOLS', tools}));
+    }
+}
