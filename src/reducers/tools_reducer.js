@@ -16,7 +16,8 @@
 export default function toolsReducer(state={tools:[]},action){
     switch(action.type){
         case "LOAD_TOOLS":
-            return {...state, tools: action.tools};
+            
+            return {tools: action.tools};
         case "DELETE_TOOL":
             return state;
         default:

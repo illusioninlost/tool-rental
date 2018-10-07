@@ -7,29 +7,21 @@ class Tools extends Component {
    
 
     componentDidMount(){
-        //  fetch("http://localhost:4000/tools")
-        // .then(response => response.json())
-        // .then(tools => console.log(tools))
         this.props.fetchTools()
     }
 
     render() {
+        debugger
         return(
             <div>
-               {console.log(this.props)}
+                
             </div>
         )
     }
     
    
     
-//     const renderTools = 
-//     return(
-//         <div>
-//             {renderTools}
-//         </div>
-//     )
-// }
+
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -44,5 +36,5 @@ const mapStateToProps = state => {
   return { tools: state.tools };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tools)
+export default connect(mapStateToProps,mapDispatchToProps)(Tools)
 
