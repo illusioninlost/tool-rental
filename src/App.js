@@ -4,7 +4,7 @@ import './App.css';
 import { bindActionCreators } from 'redux';
 import Head from './components/head';
 import Motto from './components/motto';
-import Tools from './components/tools';
+import Tools from './containers/tools';
 
 
 let tools = [
@@ -42,10 +42,7 @@ class App extends Component {
         <div className="cart">
         Cart side bar items should pop out after clicking 
         </div>
-        <div>Picture $10.00/hr
-          Content Picture Picture</div>
-        <div>Picture  Picture Picture</div>
-        <div>Picture  Picture Picture</div>
+       
         <hr/>
         <footer className="page-footer font-small blue">
         <div className="footer-copyright text-center py-3">© 2018 Copyright Tool Rental</div>
