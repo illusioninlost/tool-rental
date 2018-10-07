@@ -13,7 +13,7 @@
 // }
 
 
-export default function toolsReducer(state={tools:[]},action){
+export default function toolsReducer(state={},action){
     switch(action.type){
         case "LOAD_TOOLS":
             return {...state, tools: action.tools};
