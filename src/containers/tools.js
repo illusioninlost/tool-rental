@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class Tools extends Component { 
-    constuctor(props){
+    constuctor(){
         this.state={
             tools: []
         }
