@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import './App.css';
-
 import Head from './components/head';
 import Motto from './components/motto';
 import Tools from './containers/tools';
