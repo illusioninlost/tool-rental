@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {fetchTools} from '../actions/toolActions'
+import Item from '../components/item'
 
 class Tools extends Component { 
    
@@ -14,7 +15,7 @@ class Tools extends Component {
         
         return(
             <div>
-                img, price, description
+                <Item tools={this.props.myTools}/>
             </div>
         )
     }
