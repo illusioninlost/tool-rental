@@ -10,12 +10,22 @@ class Tools extends Component {
     componentDidMount(){
         this.props.fetchTools()
     }
-
+    
     render() {
-        
+       
         return(
             <div>
-                <Item tools={this.props.myTools}/>
+       
+         {this.props.myTools.map((t)=> {
+             {console.log(t)}
+             return(
+         <img className="toolpic" src={t.url} />
+             )
+         })}
+        
+           
+          
+
             </div>
         )
     }
@@ -33,8 +43,8 @@ const mapDispatchToProps = (dispatch) => {
 
 
 const mapStateToProps = state => {
-    console.log(state.tools);
-  return { myTools: state.tools};
+
+  return { myTools: state.tools.tools};
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Tools)
