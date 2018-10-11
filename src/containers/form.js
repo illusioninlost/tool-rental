@@ -8,9 +8,10 @@ class ToolForm extends Component{
                 <input type="text" name="toolName"/>
                 <input type="text" name="toolDescription"/>
                 <input type="number" name="toolPrice"/>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit"/>
             </form>
-        </div>)
+            </div>
+        )
     }
 }
 
