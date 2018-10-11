@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchTools } from '../actions/toolActions'
+import { fetchTools } from '../actions/toolActions';
 // import Item from '../components/item'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col } from 'react-bootstrap';
+import {Switch, Route} from 'react-router-dom';
+import {toolForm} from './form'
 
 class Tools extends Component {
 
 
     componentDidMount() {
         this.props.fetchTools()
+    }
+
+    handleShow = (t) => {
+       console.log(t) 
     }
 
     render() {
@@ -26,7 +32,7 @@ class Tools extends Component {
                                 <Col xs={6} md={4} >
                                     <img className="toolpic" src={t.url} alt={t.name}/>
                                     <p>{t.description}</p>
-                                    <p>&#36;{t.price}&#47;hour<span></span><button> Details </button>  </p>
+                                    <p>&#36;{t.price}&#47;hour<span></span><button onClick={this.handleShow}> Details </button>  </p>
                                     <p><button>Add to cart</button></p>
                                 </Col>
 
@@ -36,7 +42,10 @@ class Tools extends Component {
                     </Row>
 
                 </Grid>
-
+                {/* <Switch>
+                    <Route exact path="/tools/new" component={toolForm}/>
+                  
+                </Switch> */}
 
 
 
