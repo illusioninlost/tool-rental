@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {fetchTools} from '../actions/toolActions'
-import Item from '../components/item'
+// import Item from '../components/item'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 class Tools extends Component { 
    
@@ -15,14 +16,25 @@ class Tools extends Component {
        
         return(
             <div>
+                <Grid>
+  
+
+  <Row className="show-grid">
+  {this.props.myTools.map((t)=> {
+            
+            return(
+               <Col xs={6} md={4}>
+               <img className="toolpic" src={t.url} />
+               </Col>
+               
+            )
+        })}
        
-         {this.props.myTools.map((t)=> {
-             {console.log(t)}
-             return(
-         <img className="toolpic" src={t.url} />
-             )
-         })}
-        
+  </Row>
+
+</Grid>
+       
+      
            
           
 
