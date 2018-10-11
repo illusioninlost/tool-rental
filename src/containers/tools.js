@@ -16,14 +16,14 @@ class Tools extends Component {
 
         return (
             <div>
-                <Grid>
+                <Grid className="star">
 
 
                     <Row className="show-grid">
                         {this.props.myTools.map((t) => {
 
                             return (
-                                <Col xs={6} md={4}>
+                                <Col xs={6} md={4} >
                                     <img className="toolpic" src={t.url} alt={t.description}/>
                                     <p>{t.description}</p>
                                     <p>&#36;{t.price}&#47;hour<span></span><button> Details </button>  </p>
