@@ -24,7 +24,7 @@ class Tools extends Component {
 
                             return (
                                 <Col xs={6} md={4}>
-                                    <img className="toolpic" src={t.url} />
+                                    <img className="toolpic" src={t.url} alt={t.description}/>
                                     <p>{t.description}</p>
                                     <p>&#36;{t.price}&#47;hour</p>
                                 </Col>
