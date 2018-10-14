@@ -7,13 +7,15 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import {createStore, applyMiddleware} from 'redux';
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
-    <App />
+    <Router>
+    <Route exact path='/' component={App}/>
+    </Router>
     </Provider>
     , document.getElementById('root')
 );
