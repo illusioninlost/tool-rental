@@ -14,6 +14,7 @@ class App extends Component {
       <div className="App">
         <Head/>
         <Motto/>
+  
       
         
         <div className="cart">

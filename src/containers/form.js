@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class toolForm extends Component{
+class toolForm extends Component{
     
     render(){
         return(<div>
@@ -15,3 +15,5 @@ export default class toolForm extends Component{
     }
 }
 
+
+export default toolForm;
