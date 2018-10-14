@@ -4,8 +4,8 @@ import { bindActionCreators } from 'redux';
 import { fetchTools } from '../actions/toolActions';
 // import Item from '../components/item'
 import { Grid, Row, Col } from 'react-bootstrap';
-import {Switch, Route} from 'react-router-dom';
-import {toolForm} from './form'
+import { Link } from 'react-router-dom'
+import toolForm from './form'
 
 class Tools extends Component {
 
@@ -46,6 +46,7 @@ class Tools extends Component {
                     <Route exact path="/tools/new" component={toolForm}/>
                   
                 </Switch> */}
+                <Link to="/tools/new">Post New Tool</Link>
 
 
 

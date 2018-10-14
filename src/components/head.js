@@ -5,7 +5,7 @@ const Head = () => {
     return (<Navbar>
     <Navbar.Header>
     <Navbar.Brand>
-      <a href="#home">Tool Rental</a>
+      <a href="/">Tool Rental</a>
     </Navbar.Brand>
     </Navbar.Header>
     <Nav>
