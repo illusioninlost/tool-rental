@@ -6,6 +6,8 @@ import { fetchTools } from '../actions/toolActions';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 // import toolForm from './form'
+import ToolsList from './ToolsList';
+
 
 class Tools extends Component {
 
@@ -22,6 +24,7 @@ class Tools extends Component {
 
         return (
             <div>
+                <ToolsList tools={this.props.myTools}/>
                 <Grid className="star">
 
 
@@ -65,6 +68,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchTools: fetchTools,
     }, dispatch)
 }
+
+
 
 
 const mapStateToProps = state => {
