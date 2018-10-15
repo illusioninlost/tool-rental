@@ -13,7 +13,7 @@ class Tools extends Component {
 
 
     componentDidMount() {
-        this.props.fetchTools()
+        this.props.fetchTools();
     }
 
     handleShow = (t) => {
