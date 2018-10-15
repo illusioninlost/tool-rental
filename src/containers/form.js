@@ -7,14 +7,14 @@ class toolForm extends Component {
     state = {
         toolName: '',
         toolDescription: '',
-        toolPrice: 0.00,
+        toolPrice: 0,
         toolImage: '',
         errors: {}
     }
 
     handleOnChange = (event) => {
         this.setState({ [event.target.name]: event.target })
-        console.log(this.state.toolPrice);
+        console.log(this.state.toolPrice.value);
       
     }
 
@@ -49,7 +49,7 @@ class toolForm extends Component {
 
                 <div className={classnames('field', {error: !! this.state.errors.toolPrice})}>
                     <label htmlFor="toolPrice"> Price per hour:</label>
-                    <input type="number" step="0.01" name="toolPrice" value={parseFloat(this.state.toolPrice.value)} onChange={this.handleOnChange} />
+                    <input type="number" step="0.01" name="toolPrice" value={this.state.toolPrice.value} onChange={this.handleOnChange} />
                 </div><span>{this.state.errors.toolPrice}</span>
 
                 <div className={classnames('field', {error: !! this.state.errors.toolImage})}>
