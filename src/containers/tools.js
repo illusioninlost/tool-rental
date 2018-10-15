@@ -5,7 +5,7 @@ import { fetchTools } from '../actions/toolActions';
 // import Item from '../components/item'
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import toolForm from './form'
+// import toolForm from './form'
 
 class Tools extends Component {
 
