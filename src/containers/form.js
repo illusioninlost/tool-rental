@@ -43,7 +43,7 @@ class toolForm extends Component{
                 <input type="text" name="toolImage"  value={this.state.toolImage.value} onChange={this.handleOnChange}/>
                 </div>
                 <div className="field">
-                    <img src={this.state.toolImage.value} alt="toolImage" className="ui small bordered image"/>
+                    {this.state.toolImage.value !== '' && <img src={this.state.toolImage.value} alt="toolImage" className="ui small bordered image"/>}
                 </div>
                 <div className="field">
                 <button className="ui primary button"> Save </button>
