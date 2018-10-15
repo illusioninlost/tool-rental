@@ -30,6 +30,7 @@ class toolForm extends Component{
                 <label> Price per hour:</label>
                 <input type="number" step="0.01" name="toolPrice" onChange={this.handleOnChange}/>
                 </div>
+                <div>
                 <label>URL:</label>
                 <input type="text" name="toolImage"  onChange={this.handleOnChange}/>
                 </div>
