@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
+
 class toolForm extends Component{
 
-    handleOnChange = () => {
-
+    handleOnChange = (event) => {
+        console.log("that one");
     }
     
     handleOnSubmit = (event) => {
@@ -13,19 +14,24 @@ class toolForm extends Component{
 
 
     render(){
+
         return(<div>
+            <h1> Place Tool Ad </h1>
             <form onSubmit={this.handleOnSubmit}>
                 <div>
                 <label>Name:</label>
-                <input type="text" name="toolName" value={toolName} onChange={this.handleOnChange}/>
+                <input type="text" name="toolName"  onChange={this.handleOnChange}/>
                 </div>
                 <div>
                 <label>Description:</label>
-                <input type="text" name="toolDescription" value={toolDescription} onChange={this.handleOnChange}/>
+                <input type="text" name="toolDescription"  onChange={this.handleOnChange}/>
                 </div>
                 <div>
                 <label> Price per hour:</label>
-                <input type="number" step="0.01" name="toolPrice" value={toolPrice} onChange={this.handleOnChange}/>
+                <input type="number" step="0.01" name="toolPrice" onChange={this.handleOnChange}/>
+                </div>
+                <label>URL:</label>
+                <input type="text" name="toolImage"  onChange={this.handleOnChange}/>
                 </div>
                 <div>
                 <input type="submit" value="Submit" />
@@ -35,6 +41,7 @@ class toolForm extends Component{
         )
     }
 }
+
 
 
 export default toolForm;
