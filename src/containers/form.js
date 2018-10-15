@@ -7,7 +7,8 @@ class toolForm extends Component{
         toolName: '',
         toolDescription: '',
         toolPrice: 0,
-        toolImage: ''
+        toolImage: '',
+        errors: {}
     }
 
     handleOnChange = (event) => {
@@ -17,6 +18,12 @@ class toolForm extends Component{
     handleOnSubmit = (event) => {
         event.preventDefault();
         console.log("this one");
+        let errors = {}
+        if (this.state.toolName === '') errors.toolName = "Can't be empty";
+        if (this.state.toolDescription === '') errors.toolDescription = "Can't be empty";
+        if (this.state.toolPrice === '') errors.toolPrice = "Can't be empty";
+        if (this.state.toolImage === '') errors.toolImage = "Can't be empty";
+        this.setState({errors});
     }
 
 
