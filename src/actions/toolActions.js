@@ -53,6 +53,8 @@ export function saveTool(data) {
                 "Content-Type": "application/json"
             }
         })
+        .then(response => console.log("this fired"))
+        
 
     }
 }

@@ -7,32 +7,31 @@ import {Redirect} from 'react-router'
 class toolForm extends Component {
 
     state = {
-        toolName: '',
-        toolDescription: '',
-        toolPrice: 0,
-        toolImage: '',
+        name: '',
+        description: '',
+        price: 0,
+        url: '',
         errors: {},
         loading: false
     }
 
     handleOnChange = (event) => {
-        this.setState({ [event.target.name]: event.target })
-
+        this.setState({ [event.target.name]: event.target.value })
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault();
         let errors = {}
-        if (this.state.toolName === '') errors.toolName = "Can't be empty";
-        if (this.state.toolDescription === '') errors.toolDescription = "Can't be empty";
-        if (this.state.toolPrice === '') errors.toolPrice = "Has to be a number value";
-        if (this.state.toolImage === '') errors.toolImage = "Can't be empty";
+        if (this.state.name === '') errors.name = "Can't be empty";
+        if (this.state.description === '') errors.description = "Can't be empty";
+        if (this.state.price === '') errors.price = "Has to be a number value";
+        if (this.state.url === '') errors.url = "Can't be empty";
         this.setState({ errors });
         const isValid = Object.keys(errors).length === 0;
 
         if (isValid) {
-            const { toolName, toolDescription, toolPrice, toolImage } = this.state;
-            this.props.saveTool({toolName,toolDescription,toolPrice,toolImage})
+            const { name, description, price, url } = this.state;
+            this.props.saveTool({name,description,price,url})
             this.setState({ loading: true });
         }
 
@@ -44,28 +43,28 @@ class toolForm extends Component {
         const form = ( <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleOnSubmit}>
         <h1> Place Tool Ad </h1>
 
-        <div className={classnames('field', { error: !!this.state.errors.toolName })}>
-            <label htmlFor="toolName">Name:</label>
-            <input type="text" name="toolName" value={this.state.toolName.value} onChange={this.handleOnChange} />
-        </div><span>{this.state.errors.toolName}</span>
+        <div className={classnames('field', { error: !!this.state.errors.name })}>
+            <label htmlFor="name">Name:</label>
+            <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
+        </div><span>{this.state.errors.name}</span>
 
-        <div className={classnames('field', { error: !!this.state.errors.toolDescription })}>
-            <label htmlFor="toolDescription">Description:</label>
-            <input type="text" name="toolDescription" value={this.state.toolDescription.value} onChange={this.handleOnChange} />
-        </div><span>{this.state.errors.toolDescription}</span>
+        <div className={classnames('field', { error: !!this.state.errors.description })}>
+            <label htmlFor="description">Description:</label>
+            <input type="text" name="description" value={this.state.description} onChange={this.handleOnChange} />
+        </div><span>{this.state.errors.description}</span>
 
-        <div className={classnames('field', { error: !!this.state.errors.toolPrice })}>
-            <label htmlFor="toolPrice"> Price per hour:</label>
-            <input type="number" step="0.01" name="toolPrice" value={this.state.toolPrice.value} onChange={this.handleOnChange} />
-        </div><span>{this.state.errors.toolPrice}</span>
+        <div className={classnames('field', { error: !!this.state.errors.price })}>
+            <label htmlFor="price"> Price per hour:</label>
+            <input type="number" step="0.01" name="price" value={this.state.price} onChange={this.handleOnChange} />
+        </div><span>{this.state.errors.price}</span>
 
-        <div className={classnames('field', { error: !!this.state.errors.toolImage })}>
-            <label htmlFor="toolImage">URL:</label>
-            <input type="text" name="toolImage" value={this.state.toolImage.value} onChange={this.handleOnChange} />
-        </div><span>{this.state.errors.toolImage}</span>
+        <div className={classnames('field', { error: !!this.state.errors.url })}>
+            <label htmlFor="url">URL:</label>
+            <input type="text" name="url" value={this.state.url} onChange={this.handleOnChange} />
+        </div><span>{this.state.errors.url}</span>
 
         <div className="field">
-            {this.state.toolImage.value !== '' && <img src={this.state.toolImage.value} alt="toolImage" className="ui small bordered image" />}
+            {this.state.url !== '' && <img src={this.state.url} alt="example url" className="ui small bordered image" />}
         </div>
 
         <div className="field">

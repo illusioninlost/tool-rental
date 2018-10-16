@@ -45,10 +45,7 @@ class Tools extends Component {
                     </Row>
 
                 </Grid>
-                {/* <Switch>
-                    <Route exact path="/tools/new" component={toolForm}/>
-                  
-                </Switch> */}
+               
                 <Link to="/tools/new">Post New Tool</Link>
 
 
