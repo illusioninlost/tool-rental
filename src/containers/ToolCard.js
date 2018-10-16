@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ToolCard({ tool }){
+    console.log(tool.id)
     return(
         <div className="ui card">
             <div className="image">
@@ -10,8 +12,8 @@ export default function ToolCard({ tool }){
             <p>&#36;{tool.price}&#47;hour<span></span>  </p>
 
         <div className="ui two buttons">
-            <div className="ui basic button green"> Edit </div>
-            <div className="ui basic button"> Delete </div>
+            <Link to={`tool/${tool.id}`} className="ui basic button green"> Edit </Link>
+            <div className="ui basic button red"> Delete </div>
         </div>
         </div>
     )

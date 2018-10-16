@@ -19,6 +19,7 @@ ReactDOM.render(
     <Switch>
     <Route exact path='/' component={App}/>
     <Route exact path='/tools/new' component={toolForm}/>
+    <Route exact path='/tools/:id' component={toolForm}/>
     </Switch>
     </Router>
     </Provider>
