@@ -45,7 +45,6 @@ export function fetchTools() {
 
 
 export function saveTool(data) {
-    console.log(data)
     return (dispatch) => {
         return fetch(`${API_URL}/tools`, {
             method: 'post',

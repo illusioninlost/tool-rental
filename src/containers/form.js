@@ -17,7 +17,6 @@ class toolForm extends Component {
 
     handleOnChange = (event) => {
         this.setState({ [event.target.name]: event.target })
-        console.log(this.state.toolPrice.value);
 
     }
 
