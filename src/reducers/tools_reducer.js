@@ -19,6 +19,17 @@ export default function toolsReducer(state={tools:[]},action){
             return {...state, tools: action.tools};
         case "ADD_TOOL":
             return {...state, tools: action.tool};
+        case "FETCH_TOOL":
+    
+            // const index = state.tools.findIndex(tool => tool.id === action.tool.id);
+            // if (index > -1) {
+            //     return state.tools.map(tool => {
+            //         if (tool.id === action.tool.id)
+            //         return tool;
+            //     });
+            // }
+            
+            return state;
         default:
             return state;
     }

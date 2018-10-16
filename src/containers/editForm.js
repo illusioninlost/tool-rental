@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import {connect} from 'react-redux';
-import {saveTool} from '../actions/toolActions'
+import {saveTool, fetchTool} from '../actions/toolActions'
 import {Redirect} from 'react-router'
 
 class editForm extends Component {
@@ -35,6 +35,12 @@ class editForm extends Component {
             this.setState({ loading: true });
         }
 
+    }
+
+    componentDidMount = () => {
+        
+        this.props.fetchTool(this.props.match.params.id)
+        
     }
     
 
@@ -83,16 +89,18 @@ class editForm extends Component {
 }
 
 function mapStateToProps(state,props) {
+
     if (props.match.params.id){
         return {
-            tool: state.tools.tools.find(tool => tool.id === props.params.id)
+            tool: state.tools.tools.find(tool => tool.id === props.match.params.id)
         }
     }
     return{
         tool: null
     }
+    
 }
 
 
 
-export default connect(mapStateToProps, { saveTool })(editForm);
+export default connect(mapStateToProps, { saveTool, fetchTool })(editForm);

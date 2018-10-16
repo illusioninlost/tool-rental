@@ -39,6 +39,12 @@ export function addTool(tool){
     }
 }
 
+export function toolFetched(tool){
+    console.log("jskadlfjdsj")
+        type: "FETCH_TOOL",
+        tool
+}
+
 
 
 
@@ -64,5 +70,14 @@ export function saveTool(tool) {
         .then(tool => dispatch(addTool(tool)))
         
 
+    }
+}
+
+export function fetchTool(id){
+    return dispatch => {
+        fetch(`${API_URL}/tools/${id}`)
+        .then(res => res.json())
+        .then(tool => toolFetched(tool))
+        
     }
 }
