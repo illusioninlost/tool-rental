@@ -10,6 +10,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import toolForm from './containers/form'
 import {composeWithDevTools} from 'redux-devtools-extension';
+import editForm from './containers/editForm';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)) )
 
@@ -19,7 +20,7 @@ ReactDOM.render(
     <Switch>
     <Route exact path='/' component={App}/>
     <Route exact path='/tools/new' component={toolForm}/>
-    <Route exact path='/tools/:id' component={toolForm}/>
+    <Route exact path='/tools/:id' component={editForm}/>
     </Switch>
     </Router>
     </Provider>
