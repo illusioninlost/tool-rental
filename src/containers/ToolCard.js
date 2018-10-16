@@ -9,6 +9,10 @@ export default function ToolCard({ tool }){
             <p>{tool.description}</p>
             <p>&#36;{tool.price}&#47;hour<span></span>  </p>
 
+        <div className="ui two buttons">
+            <div className="ui basic button green"> Edit </div>
+            <div className="ui basic button"> Delete </div>
+        </div>
         </div>
     )
 }
