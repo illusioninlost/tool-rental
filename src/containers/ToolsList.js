@@ -1,4 +1,5 @@
 import React from 'react';
+import ToolCard from './ToolCard';
 
 export default function ToolsList({ tools }){
 
@@ -7,7 +8,9 @@ export default function ToolsList({ tools }){
     )
 
     const toolsList = (
-        <p>tools list</p>
+        <div className="ui three cards">
+        {tools.map(tool => <ToolCard tool={tool} key={tool.id}/>)}
+        </div>
     )
     return (
         <div>

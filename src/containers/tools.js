@@ -25,7 +25,7 @@ class Tools extends Component {
         return (
             <div>
                 <ToolsList tools={this.props.myTools}/>
-                <Grid className="star">
+                {/* <Grid className="star">
 
 
                     <Row className="show-grid">
@@ -44,7 +44,7 @@ class Tools extends Component {
 
                     </Row>
 
-                </Grid>
+                </Grid> */}
                
                 <Link to="/tools/new">Post New Tool</Link>
 
