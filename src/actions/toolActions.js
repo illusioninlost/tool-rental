@@ -32,6 +32,13 @@ export function setTools(tools) {
     }
 }
 
+export function addTool(tool){
+    return {
+        type: "ADD_TOOL",
+        tool
+    }
+}
+
 
 
 
@@ -44,16 +51,17 @@ export function fetchTools() {
 };
 
 
-export function saveTool(data) {
+export function saveTool(tool) {
     return (dispatch) => {
         return fetch(`${API_URL}/tools`, {
             method: 'post',
-            body: JSON.stringify(data, getCircularReplacer()),
+            body: JSON.stringify(tool, getCircularReplacer()),
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => console.log("this fired"))
+        .then(response => response.json())
+        .then(tool => dispatch(addTool(tool)))
         
 
     }
