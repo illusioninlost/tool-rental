@@ -28,8 +28,8 @@ export default function toolsReducer(state={tools:[]},action){
             //         return tool;
             //     });
             // }
-            
-            return state;
+            console.log("why this never hits")
+            return action.tool;
         default:
             return state;
     }

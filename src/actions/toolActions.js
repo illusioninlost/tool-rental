@@ -40,7 +40,6 @@ export function addTool(tool){
 }
 
 export function toolFetched(tool){
-    console.log("jskadlfjdsj")
         type: "FETCH_TOOL",
         tool
 }

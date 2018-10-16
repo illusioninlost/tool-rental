@@ -9,7 +9,7 @@ class editForm extends Component {
     state = {
         name: this.props.name ? this.props.name : '',
         description: this.props.description ? this.props.div :'',
-        price: this.props.price ? this.props.p :0,
+        price: this.props.price ? this.props.price : 0,
         url: this.props.url ? this.props.url :'',
         errors: {},
         loading: false
