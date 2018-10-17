@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function ToolCard({ tool}){
+export default function ToolCard({tool}){
+
     return(
         <div className="ui card">
             <div className="image">
@@ -14,7 +15,7 @@ export default function ToolCard({ tool}){
 
         <div className="ui two buttons">
             <Link to={`tools/${tool.id}`} className="ui basic button green"> Edit </Link>
-            <div className="ui basic button red"> Delete </div>
+            <Link to={`tools/${tool.id}/delete`} className="ui basic button red"> Delete </Link>
         </div>
         </div>
     )

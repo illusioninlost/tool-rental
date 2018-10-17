@@ -11,6 +11,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import toolForm from './containers/form'
 import {composeWithDevTools} from 'redux-devtools-extension';
 import editForm from './containers/editForm';
+import deleteTool from './containers/deleteTool';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)) )
 
@@ -21,6 +22,7 @@ ReactDOM.render(
     <Route exact path='/' component={App}/>
     <Route exact path='/tools/new' component={toolForm}/>
     <Route exact path='/tools/:id' component={editForm}/>
+    <Route exact path='/tools/:id/delete' component={deleteTool}/>
     </Switch>
     </Router>
     </Provider>
