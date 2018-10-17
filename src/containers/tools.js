@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+
 import { fetchTools, deleteTool } from '../actions/toolActions';
 // import Item from '../components/item'
-import { Grid, Row, Col } from 'react-bootstrap';
+// import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 // import toolForm from './form'
 import ToolsList from './ToolsList';

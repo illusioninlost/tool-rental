@@ -103,4 +103,4 @@ function mapStateToProps(state,props) {
 
 
 
-export default connect(mapStateToProps, { fetchTool })(editForm);
+export default connect(mapStateToProps, { saveTool, fetchTool })(editForm);
