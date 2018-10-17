@@ -40,7 +40,7 @@ export function addTool(tool){
 }
 
 export function toolFetched(tool){
-        type: "FETCH_TOOL",
+        type: "LOOK_TOOL",
         tool
 }
 

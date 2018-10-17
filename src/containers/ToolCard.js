@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ToolCard({ tool }){
+
+
+export default function ToolCard({ tool}){
     return(
         <div className="ui card">
             <div className="image">
