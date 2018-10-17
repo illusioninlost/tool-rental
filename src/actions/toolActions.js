@@ -77,8 +77,8 @@ export function saveTool(tool) {
     }
 }
 
-export function fetchTool(dispatch, id) {
-   console.log("hello", dispatch)
+export function fetchTool( id) {
+  
     return dispatch => {
         fetch(`${API_URL}/tools/${id}`)
             .then(res => res.json())
