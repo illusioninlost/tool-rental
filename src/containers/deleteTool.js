@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Redirect} from 'react-router';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { removeTool } from '../actions/toolActions';
 
@@ -10,18 +10,20 @@ class deleteTool extends Component {
     }
 
     componentDidMount() {
-        this.props.removeTool({id:this.props.match.params.id})
-        this.setState({loading:true})
+        this.props.removeTool({ id: this.props.match.params.id })
+        this.setState({ loading: true })
     }
 
     render() {
-        return(
+
+        return (
             <div>
-               {this.state.loading ? < Redirect to="/"/> : "Error prevented deletion of tool"}
+                {this.state.loading ? < Redirect to="/" /> : "Error prevented deletion of tool"}
             </div>
         )
+
     }
 }
 
-export default connect(null, {removeTool})(deleteTool);
+export default connect(null, { removeTool })(deleteTool);
 

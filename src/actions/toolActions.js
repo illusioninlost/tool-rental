@@ -15,15 +15,15 @@ const API_URL = "http://localhost:4000";
 const getCircularReplacer = () => {
     const seen = new WeakSet();
     return (key, value) => {
-      if (typeof value === "object" && value !== null) {
-        if (seen.has(value)) {
-          return;
+        if (typeof value === "object" && value !== null) {
+            if (seen.has(value)) {
+                return;
+            }
+            seen.add(value);
         }
-        seen.add(value);
-      }
-      return value;
+        return value;
     };
-  };
+};
 
 export function setTools(tools) {
     return {
@@ -32,21 +32,21 @@ export function setTools(tools) {
     }
 }
 
-export function addTool(tool){
+export function addTool(tool) {
     return {
         type: "ADD_TOOL",
         tool
     }
 }
 
-export function toolFetched(tool){
-        type: "FETCH_TOOL",
+export function toolFetched(tool) {
+    type: "FETCH_TOOL",
         tool
 }
 
-export function gone(tool){
+export function gone(tool) {
     type: "DELETE_TOOL",
-    tool
+        tool
 }
 
 
@@ -70,19 +70,19 @@ export function saveTool(tool) {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => response.json())
-        .then(tool => dispatch(addTool(tool)))
-        
+            .then(response => response.json())
+            .then(tool => dispatch(addTool(tool)))
+
 
     }
 }
 
-export function fetchTool(id){
+export function fetchTool(id) {
     return dispatch => {
         fetch(`${API_URL}/tools/${id}`)
-        .then(res => res.json())
-        .then(tool => toolFetched(tool))
-        
+            .then(res => res.json())
+            .then(tool => toolFetched(tool))
+
     }
 }
 
@@ -95,8 +95,8 @@ export function removeTool(tool) {
                 "Content-Type": "application/json"
             }
         })
-        .then(response => response.json())
-       
-    
+            .then(response => response.json())
+
+
     }
 }

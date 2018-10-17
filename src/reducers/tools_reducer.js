@@ -20,7 +20,6 @@ export default function toolsReducer(state={tools:[]},action){
         case "ADD_TOOL":
             return {...state, tools: action.tool};
         case "FETCH_TOOL":
-    
             // const index = state.tools.findIndex(tool => tool.id === action.tool.id);
             // if (index > -1) {
             //     return state.tools.map(tool => {

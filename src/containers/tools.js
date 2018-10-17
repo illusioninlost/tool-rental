@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { fetchTools } from '../actions/toolActions';
 // import Item from '../components/item'
 // import { Grid, Row, Col } from 'react-bootstrap';
@@ -12,21 +11,17 @@ import ToolsList from './ToolsList';
 
 class Tools extends Component {
 
-   
 
     componentDidMount() {
         this.props.fetchTools();
     }
 
-   
-
-    
 
     render() {
-        
+
         return (
             <div>
-                <ToolsList tools={this.props.myTools} deleteTool={this.props.deleteTool}/>
+                <ToolsList tools={this.props.myTools} deleteTool={this.props.deleteTool} />
                 {/* <Grid className="star">
 
 
@@ -47,13 +42,12 @@ class Tools extends Component {
                     </Row>
 
                 </Grid> */}
-               
+
                 <Link to="/tools/new">Post New Tool</Link>
 
 
-
-
             </div>
+
         )
     }
 
