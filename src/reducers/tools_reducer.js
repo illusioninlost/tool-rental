@@ -30,6 +30,8 @@ export default function toolsReducer(state={tools:[]},action){
             // }
             console.log("why this never hits")
             return action.tool;
+        case "DELETE_TOOL":
+            return (console.log("any"))
         default:
             return state;
     }

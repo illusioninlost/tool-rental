@@ -44,6 +44,11 @@ export function toolFetched(tool){
         tool
 }
 
+export function gone(tool){
+    type: "DELETE_TOOL",
+    tool
+}
+
 
 
 
@@ -78,5 +83,20 @@ export function fetchTool(id){
         .then(res => res.json())
         .then(tool => toolFetched(tool))
         
+    }
+}
+
+export function removeTool(tool) {
+    return (dispatch) => {
+        return fetch(`${API_URL}/tools/${tool.id}`, {
+            method: 'delete',
+            body: JSON.stringify(tool),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.json())
+       
+    
     }
 }
