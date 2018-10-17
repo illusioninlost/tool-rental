@@ -96,7 +96,7 @@ export function removeTool(tool) {
             }
         })
             .then(response => response.json())
-
+            .then(tool => console.log(tool))
 
     }
 }
