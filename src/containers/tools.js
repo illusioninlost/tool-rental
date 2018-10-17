@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchTools, deleteTool } from '../actions/toolActions';
+import { fetchTools } from '../actions/toolActions';
 // import Item from '../components/item'
 // import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
