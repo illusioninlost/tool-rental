@@ -38,8 +38,8 @@ class editForm extends Component {
     }
 
     componentDidMount = () => {
-
-        this.props.fetchTool(this.props.match.params.id)
+        
+        this.props.fetchTool(null, this.props.match.params.id)
 
     }
 
@@ -89,6 +89,8 @@ class editForm extends Component {
         )
     }
 }
+
+
 
 function mapStateToProps(state, props) {
 
