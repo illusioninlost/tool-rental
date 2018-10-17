@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchTools } from '../actions/toolActions';
+import { fetchTools, deleteTool } from '../actions/toolActions';
 // import Item from '../components/item'
 import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 // import toolForm from './form'
 import ToolsList from './ToolsList';
+
 
 
 class Tools extends Component {
@@ -16,17 +17,15 @@ class Tools extends Component {
         this.props.fetchTools();
     }
 
-    handleShow = (t) => {
-       console.log(t) 
-    }
+   
 
     
 
     render() {
-
+        
         return (
             <div>
-                <ToolsList tools={this.props.myTools}/>
+                <ToolsList tools={this.props.myTools} deleteTool={this.props.deleteTool}/>
                 {/* <Grid className="star">
 
 
@@ -62,10 +61,8 @@ class Tools extends Component {
 
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        fetchTools: fetchTools,
-    }, dispatch)
+const mapDispatchToProps = {
+    fetchTools
 }
 
 
