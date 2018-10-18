@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { saveTool, fetchTool } from '../actions/toolActions'
+import { editTool, fetchTool } from '../actions/toolActions'
 import { Redirect } from 'react-router'
 
 class editForm extends Component {
@@ -32,8 +32,8 @@ class editForm extends Component {
 
         if (isValid) {
             const { id, name, description, price, url } = this.state;
-            console.log({id, name, description, price, url})
-            this.props.editTool({ name, description, price, url })
+            console.log({ id, name, description, price, url })
+            this.props.editTool({ id, name, description, price, url })
             //this.setState({ loading: true });
         }
 
@@ -63,7 +63,7 @@ class editForm extends Component {
 
             <div className={classnames('field', { error: !!this.state.errors.name })}>
                 <label htmlFor="name">Name:</label>
-                <input type="text" name="name"  value={this.props.tool.name} placeholder={this.props.tool.name} onChange={this.handleOnChange} />
+                <input type="text" name="name"  value={this.state.name} placeholder={this.props.tool.name} onChange={this.handleOnChange} />
             </div><span>{this.state.errors.name}</span>
 
             <div className={classnames('field', { error: !!this.state.errors.description })}>
@@ -119,4 +119,4 @@ function mapStateToProps(state, props) {
 
 
 
-export default connect(mapStateToProps, { saveTool, fetchTool })(editForm);
+export default connect(mapStateToProps, { editTool, fetchTool })(editForm);

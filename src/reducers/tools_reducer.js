@@ -28,8 +28,11 @@ export default function toolsReducer(state={tools:[]},action){
             //     });
             // }
             return action.tool;
+        case "PATCH_TOOL":
+        
+            return action.tool;
         case "DELETE_TOOL":
-            return (console.log("any"))
+            return state;
         default:
             return state;
     }

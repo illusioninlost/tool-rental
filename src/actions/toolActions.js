@@ -39,15 +39,12 @@ export function addTool(tool) {
     }
 }
 
-export function toolFetched(tool) {
-    type: "FETCH_TOOL",
-        tool
-}
 
 export function gone(tool) {
     type: "DELETE_TOOL",
         tool
 }
+
 
 
 
@@ -97,7 +94,24 @@ export function removeTool(tool) {
             }
         })
             .then(response => response.json())
-            .then(tool => console.log(tool))
+            .then(tool => dispatch({type:'DELETE_TOOL', tool:tool}))
+
+    }
+}
+
+export function editTool(tool) {
+    console.log(tool)
+    return (dispatch) => {
+        return fetch(`${API_URL}/tools/${tool.id}`, {
+            method: 'patch',
+            body: JSON.stringify(tool),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(tool => dispatch( {type: "PATCH_TOOL", tool:tool}))
+
 
     }
 }
