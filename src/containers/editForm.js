@@ -5,12 +5,13 @@ import { saveTool, fetchTool } from '../actions/toolActions'
 import { Redirect } from 'react-router'
 
 class editForm extends Component {
-
+    
     state = {
-        name: this.props.name ? this.props.name : '',
-        description: this.props.description ? this.props.div : '',
-        price: this.props.price ? this.props.price : 0,
-        url: this.props.url ? this.props.url : '',
+        id: this.props.tool ? this.props.tool.id : null,
+        name: this.props.tool ? this.props.tool.name : '',
+        description: this.props.tool ? this.props.tool.description : '',
+        price: this.props.tool ? this.props.tool.price : 0,
+        url: this.props.tool ? this.props.tool.url : '',
         errors: {},
         loading: false
     }
@@ -30,9 +31,10 @@ class editForm extends Component {
         const isValid = Object.keys(errors).length === 0;
 
         if (isValid) {
-            const { name, description, price, url } = this.state;
-            this.props.saveTool({ name, description, price, url })
-            this.setState({ loading: true });
+            const { id, name, description, price, url } = this.state;
+            console.log({id, name, description, price, url})
+            this.props.editTool({ name, description, price, url })
+            //this.setState({ loading: true });
         }
 
     }
@@ -41,6 +43,15 @@ class editForm extends Component {
         
         this.props.fetchTool(this.props.match.params.id)
 
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({ id: nextProps.tool.id,
+            name: nextProps.tool.name,
+            description: nextProps.tool.description,
+            price: nextProps.tool.price,
+            url: nextProps.tool.url})
+    
     }
 
 
@@ -52,7 +63,7 @@ class editForm extends Component {
 
             <div className={classnames('field', { error: !!this.state.errors.name })}>
                 <label htmlFor="name">Name:</label>
-                <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
+                <input type="text" name="name"  value={this.props.tool.name} placeholder={this.props.tool.name} onChange={this.handleOnChange} />
             </div><span>{this.state.errors.name}</span>
 
             <div className={classnames('field', { error: !!this.state.errors.description })}>
@@ -93,10 +104,11 @@ class editForm extends Component {
 
 
 function mapStateToProps(state, props) {
-
+   
     if (props.match.params.id) {
         return {
-            tool: state.tools.tools.find(tool => tool.id === props.match.params.id)
+            tool: state.tools
+            
         }
     }
     return {
