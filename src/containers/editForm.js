@@ -34,7 +34,7 @@ class editForm extends Component {
             const { id, name, description, price, url } = this.state;
             console.log({ id, name, description, price, url })
             this.props.editTool({ id, name, description, price, url })
-            //this.setState({ loading: true });
+            this.setState({ loading: true });
         }
 
     }
@@ -107,7 +107,7 @@ function mapStateToProps(state, props) {
    
     if (props.match.params.id) {
         return {
-            tool: state.tools
+            tool: state.tools.found
             
         }
     }

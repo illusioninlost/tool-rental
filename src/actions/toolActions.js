@@ -103,7 +103,7 @@ export function editTool(tool) {
     console.log(tool)
     return (dispatch) => {
         return fetch(`${API_URL}/tools/${tool.id}`, {
-            method: 'patch',
+            method: 'put',
             body: JSON.stringify(tool),
             headers: {
                 "Content-Type": "application/json"

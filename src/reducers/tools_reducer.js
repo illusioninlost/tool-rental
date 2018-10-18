@@ -13,7 +13,7 @@
 // }
 
 
-export default function toolsReducer(state={tools:[]},action){
+export default function toolsReducer(state={tools:[], found:[]},action){
     switch(action.type){
         case "LOAD_TOOLS":
             return {...state, tools: action.tools};
@@ -27,10 +27,10 @@ export default function toolsReducer(state={tools:[]},action){
             //         return tool;
             //     });
             // }
-            return action.tool;
+            return {...state, found: action.tool};
         case "PATCH_TOOL":
         
-            return action.tool;
+            return {...state};
         case "DELETE_TOOL":
             return state;
         default:
