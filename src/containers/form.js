@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
-import { saveTool } from '../actions/toolActions'
-import { Redirect } from 'react-router'
+import { saveTool } from '../actions/toolActions';
+import { Redirect } from 'react-router';
+import Footer from '../components/footer';
 
 class toolForm extends Component {
 
@@ -40,9 +41,13 @@ class toolForm extends Component {
 
     render() {
 
-        const form = (<form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleOnSubmit}>
-            <h1> Place Tool AD </h1>
+        const head = {fontSize: '2.5em', color: '#382f17', textAlign:'center'}
 
+        const right = {marginTop: '30px'}
+        
+        const form = (<form className={classnames('ui', 'form', 'smaller', { loading: this.state.loading })} onSubmit={this.handleOnSubmit}>
+            <h1 style={head}> Place Tool AD </h1>
+            <hr/> 
             <div className={classnames('field', { error: !!this.state.errors.name })}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" name="name" value={this.state.name} onChange={this.handleOnChange} />
@@ -67,7 +72,7 @@ class toolForm extends Component {
                 {this.state.url !== '' && <img src={this.state.url} alt="example url" className="ui small bordered image" />}
             </div>
 
-            <div className="field">
+            <div className="field" style={right}>
                 <button className="ui primary button"> Post </button>
             </div>
 
@@ -75,7 +80,7 @@ class toolForm extends Component {
 
         return (<div>
             {this.state.loading ? < Redirect to="/" /> : form}
-
+            <Footer/>
         </div>
         )
     }

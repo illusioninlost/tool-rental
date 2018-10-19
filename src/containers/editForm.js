@@ -58,8 +58,12 @@ class editForm extends Component {
 
     render() {
 
-        const form = (<form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleOnSubmit}>
-            <h1> Edit Tool AD </h1>
+        const head = {fontSize: '2.5em', color: '#382f17', textAlign:'center'}
+
+        const right = {marginTop: '30px'}
+
+        const form = (<form className={classnames('ui', 'form', 'smaller', { loading: this.state.loading })} onSubmit={this.handleOnSubmit}>
+            <h1 style={head}> Edit Tool AD </h1>
 
             <div className={classnames('field', { error: !!this.state.errors.name })}>
                 <label htmlFor="name">Name:</label>
@@ -85,7 +89,7 @@ class editForm extends Component {
                 {this.state.url !== '' && <img src={this.state.url} alt="example url" className="ui small bordered image" />}
             </div>
 
-            <div className="field">
+            <div className="field" style={right}>
                 <button className="ui primary button"> Update </button>
             </div>
 

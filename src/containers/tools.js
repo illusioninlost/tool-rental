@@ -43,7 +43,7 @@ class Tools extends Component {
 
                 </Grid> */}
 
-                <Link to="/tools/new">Post New Tool</Link>
+                <Link to="/tools/new" className="add">Place New Tool AD</Link>
 
 
             </div>

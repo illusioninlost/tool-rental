@@ -1,15 +1,3 @@
-// example
-// import fetch from 'isomorphic-fetch';
-
-// export function fetchCats() {
-//   return (dispatch) => {
-//       dispatch({ type: 'LOADING_CATS' });
-//       return fetch('http://localhost:4000/db')
-//       .then(response => response.json())    
-//       .then(cats => dispatch({ type: 'FETCH_CATS', payload: cats.images }));
-//   };
-// };
-
 const API_URL = "http://localhost:4000";
 
 const getCircularReplacer = () => {
@@ -40,14 +28,6 @@ export function addTool(tool) {
 }
 
 
-export function gone(tool) {
-    type: "DELETE_TOOL",
-        tool
-}
-
-
-
-
 
 export function fetchTools() {
     return (dispatch) => {
@@ -74,12 +54,12 @@ export function saveTool(tool) {
     }
 }
 
-export function fetchTool( id) {
-  
+export function fetchTool(id) {
+
     return dispatch => {
         fetch(`${API_URL}/tools/${id}`)
             .then(res => res.json())
-            .then(tool => dispatch({type:'FETCH_TOOL',tool:tool}))
+            .then(tool => dispatch({ type: 'FETCH_TOOL', tool: tool }))
 
     }
 }
@@ -94,7 +74,7 @@ export function removeTool(tool) {
             }
         })
             .then(response => response.json())
-            .then(tool => dispatch({type:'DELETE_TOOL', tool:tool}))
+            .then(tool => dispatch({ type: 'DELETE_TOOL', tool: tool }))
 
     }
 }
@@ -110,7 +90,7 @@ export function editTool(tool) {
             }
         })
             .then(response => response.json())
-            .then(tool => dispatch( {type: "PATCH_TOOL", tool:tool}))
+            .then(tool => dispatch({ type: "PATCH_TOOL", tool: tool }))
 
 
     }
