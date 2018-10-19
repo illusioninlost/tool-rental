@@ -15,7 +15,6 @@ class App extends Component {
         <Head />
         <Motto />
         <div className="cart">
-          Cart side bar items should pop out after clicking
         </div>
         <Tools />
        <Footer />

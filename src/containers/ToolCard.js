@@ -8,7 +8,7 @@ export default function ToolCard({ tool }) {
     return (
         <div className="ui card">
             <div>
-                <img src={tool.url} alt={tool.name} className="toolpic" />
+                <img src={tool.url} alt={tool.name} className="toolpic thumbnail" />
             </div>
             <p>{tool.description}</p>
             <p>&#36;{tool.price}&#47;hour<span></span> </p>
