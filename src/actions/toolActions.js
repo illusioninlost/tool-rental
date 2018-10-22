@@ -80,7 +80,6 @@ export function removeTool(tool) {
 }
 
 export function editTool(tool) {
-    
     return (dispatch) => {
         return fetch(`${API_URL}/tools/${tool.id}`, {
             method: 'put',
@@ -90,7 +89,7 @@ export function editTool(tool) {
             }
         })
             .then(response => response.json())
-            .then(tool => dispatch({ type: "PATCH_TOOL", tool: tool }) )
+            .then(tool => dispatch({type: 'PATCH_TOOL', tool: tool}) )
 
 
     }

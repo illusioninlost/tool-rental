@@ -14,15 +14,8 @@ export default function toolsReducer(state={tools:[], found:[]},action){
         case "PATCH_TOOL":
 
              const ind = state.tools.findIndex(tool => tool.id === action.tool.id);
-                debugger
-             // if (ind > -1) {
-            //     return state.tools.map(tool => {
-            //         if (tool.id === action.tool.id)
-            //         return action.tool;
-            //     });
-            // }
            
-        
+            state.tools.splice(ind,1,action.tool)
             return state;
 
         case "DELETE_TOOL":
