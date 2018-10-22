@@ -3,8 +3,8 @@ export default function toolsReducer(state={tools:[], found:[]},action){
         case "LOAD_TOOLS":
             return {...state, tools: action.tools};
         case "ADD_TOOL":
-            console.log(action.tool)
-            return {...state, tools: action.tool}
+            state.tools.push(action.tool)
+            return state
         case "FETCH_TOOL":
             // const index = state.tools.findIndex(tool => tool.id === action.tool.id);
             // if (index > -1) {
