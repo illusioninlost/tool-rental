@@ -32,7 +32,6 @@ class editForm extends Component {
 
         if (isValid) {
             const { id, name, description, price, url } = this.state;
-            console.log({ id, name, description, price, url })
             this.props.editTool({ id, name, description, price, url })
             this.setState({ loading: true });
         }

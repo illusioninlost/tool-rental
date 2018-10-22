@@ -8,18 +8,22 @@ export default function toolsReducer(state={tools:[], found:[]},action){
             return state;
 
         case "FETCH_TOOL":
-            // const index = state.tools.findIndex(tool => tool.id === action.tool.id);
-            // if (index > -1) {
-            //     return state.tools.map(tool => {
-            //         if (tool.id === action.tool.id)
-            //         return tool;
-            //     });
-            // }
+        
             return {...state, found: action.tool};
 
         case "PATCH_TOOL":
+
+             const ind = state.tools.findIndex(tool => tool.id === action.tool.id);
+                debugger
+             // if (ind > -1) {
+            //     return state.tools.map(tool => {
+            //         if (tool.id === action.tool.id)
+            //         return action.tool;
+            //     });
+            // }
+           
         
-            return {...state};
+            return state;
 
         case "DELETE_TOOL":
             const index = state.tools.findIndex(tool => tool.id === action.tool.id);
