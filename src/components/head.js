@@ -1,12 +1,13 @@
 import React from 'react';
-import { Navbar, Nav, NavItem} from 'react-bootstrap';
+import { Navbar} from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
 const Head = () => {
 
   const navbar = {backgroundColor: '#ffdf40'};
   const brand = {color: '#1f1d15'};
-  const size = {fontSize: 30}
-  const size2 = {fontSize: 20, marginLeft: 10 }
+  const size = {fontSize: 30};
+ 
 
   return (
     <Navbar style={navbar}>
@@ -15,11 +16,8 @@ const Head = () => {
           <a href="/" style={size}>Tool Rental</a>
         </Navbar.Brand>
       </Navbar.Header>
-      <Nav>
-        <NavItem eventKey={1} href="/tools/new" style={size2}>
-          Place Tool AD
-    </NavItem>
-      </Nav>
+      <Link to="/tools/new" className="navAdd">Place New Tool AD</Link>
+
     </Navbar>
   )
 
