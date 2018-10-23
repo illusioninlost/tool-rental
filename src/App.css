@@ -74,4 +74,8 @@ div.copyright{
   margin-left: 1.5em;
 }
 
+div.shrink {
+  margin-left: -100%;
+  margin-right: -100%;
+}
 

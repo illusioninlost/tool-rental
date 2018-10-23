@@ -8,7 +8,7 @@ export default function ToolsList({ tools }) {
     )
 
     const toolsList = (
-        <div className="ui three cards">
+        <div className="ui three cards shrink">
             {tools.map(tool => <ToolCard tool={tool} key={tool.id} />)}
         </div>
     )
