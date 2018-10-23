@@ -15,6 +15,7 @@ class App extends Component {
         <Head />
         <Motto />
         <div className="cart">
+        <div style={{textAlign:'left', marginLeft:'100px', marginBottom:'1.5em', fontSize:'1.5em'}}> <b>Available:</b> </div>
         </div>
         <Tools />
        <FooterPage />
