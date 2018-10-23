@@ -11,20 +11,13 @@ import ToolsList from './ToolsList';
 
 class Tools extends Component {
 
-    state = {
-        myTools: this.props.myTools
-    }
 
     componentDidMount() {
         if(this.props.myTools.length < 1){
         this.props.fetchTools()};
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({myTools: nextProps})
-            
-    }
-
+   
     render() {
 
         return (
