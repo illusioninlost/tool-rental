@@ -11,17 +11,25 @@ import ToolsList from './ToolsList';
 
 class Tools extends Component {
 
-
-    componentDidMount() {
-        this.props.fetchTools();
+    state = {
+        myTools: this.props.myTools
     }
 
+    componentDidMount() {
+        if(this.props.myTools.length < 1){
+        this.props.fetchTools()};
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({myTools: nextProps})
+            
+    }
 
     render() {
-
+       console.log(this.props.myTools)
         return (
             <div>
-                <ToolsList tools={this.props.myTools} deleteTool={this.props.deleteTool} />
+                <ToolsList tools={this.props.myTools} />
                 {/* <Grid className="star">
 
 
