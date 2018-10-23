@@ -4,8 +4,9 @@ export default function toolsReducer(state={tools:[], found:[]},action){
             return {...state, tools: action.tools};
             
         case "ADD_TOOL":
-        state.tools.push(action.tool)
-            return state;
+            state.tools.push(action.tool)
+            const result = state.tools.map(tool => tool)
+            return {...state, tools: result};
 
         case "FETCH_TOOL":
         
@@ -13,10 +14,9 @@ export default function toolsReducer(state={tools:[], found:[]},action){
 
         case "PATCH_TOOL":
 
-             const ind = state.tools.findIndex(tool => tool.id === action.tool.id);
-           
+            const ind = state.tools.findIndex(tool => tool.id === action.tool.id);
             state.tools.splice(ind,1,action.tool)
-            return state;
+            return {...state, tools: state.tools.map(tool => tool)};
 
         case "DELETE_TOOL":
             const index = state.tools.findIndex(tool => tool.id === action.tool.id);

@@ -26,7 +26,7 @@ class Tools extends Component {
     }
 
     render() {
-       console.log(this.props.myTools)
+
         return (
             <div>
                 <ToolsList tools={this.props.myTools} />
