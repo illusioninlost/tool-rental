@@ -3,7 +3,7 @@ import './App.css';
 import Head from './components/head';
 import Motto from './components/motto';
 import Tools from './containers/tools';
-import Footer from './components/footer';
+import FooterPage from './components/footer';
 
 class App extends Component {
 
@@ -17,7 +17,7 @@ class App extends Component {
         <div className="cart">
         </div>
         <Tools />
-       <Footer />
+       <FooterPage />
       </div>
 
     );

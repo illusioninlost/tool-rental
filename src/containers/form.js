@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { saveTool } from '../actions/toolActions';
 import { Redirect } from 'react-router';
-import Footer from '../components/footer';
+import FooterPage from '../components/footer';
 
 class toolForm extends Component {
 
@@ -80,7 +80,7 @@ class toolForm extends Component {
 
         return (<div>
             {this.state.loading ? < Redirect to="/" /> : form}
-            <Footer/>
+            <FooterPage/>
         </div>
         )
     }
