@@ -39,6 +39,7 @@ export function fetchTools() {
 
 
 export function saveTool(tool) {
+    console.log('C')
     return (dispatch) => {
         return fetch(`${API_URL}/tools`, {
             method: 'post',
@@ -48,10 +49,13 @@ export function saveTool(tool) {
             }
         })
             .then(response => response.json())
-            .then(tool => dispatch(addTool(tool)))
+            .then(tool => {
+                console.log('D')
+                dispatch(addTool(tool))})
 
 
     }
+    console.log('E')
 }
 
 export function fetchTool(id) {

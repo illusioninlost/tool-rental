@@ -32,7 +32,9 @@ class toolForm extends Component {
 
         if (isValid) {
             const { name, description, price, url } = this.state;
+            console.log('A')
             this.props.saveTool({ name, description, price, url })
+            console.log('B')
             this.setState({ loading: true });
         }
 
