@@ -13,16 +13,16 @@ import { Link } from 'react-router-dom';
 
 class Tools extends Component {
 
-    constructor(){
-        super()
+    // constructor(){
+    //     super()
 
-        this.state = {
-            count: 0
-        }
+    //     this.state = {
+    //         count: 0
+    //     }
 
-        this.handleClick = this.handleClick.bind(this);
+    //     this.handleClick = this.handleClick.bind(this);
 
-    }
+    // }
    
 
 
@@ -31,11 +31,11 @@ class Tools extends Component {
         this.props.fetchTools()};
     }
 
-    handleClick() {
-        this.setState(
-          {count: this.state.count = this.state.count + 1}
-        )
-    }
+    // handleClick() {
+    //     this.setState(
+    //       {count: this.state.count = this.state.count + 1}
+    //     )
+    // }
 
    
     render() {
@@ -46,7 +46,7 @@ class Tools extends Component {
         const resize = {fontSize:30, margin:0}
         const description = {fontSize:20, color: '#8f8762'}
         const price = {fontSize:25}
-        const counter = 0;
+     
        
       
     
@@ -61,7 +61,7 @@ class Tools extends Component {
                 <p style={resize}>{tool.name}</p>
                 <p style={description}>{tool.description}</p>
                 <p style={price}>&#36;{tool.price}&#47;hour<span></span> </p>
-                <p><button onClick={this.handleClick}>{this.state.count}</button></p>
+                <p><button onClick={this.handleClick}>{tool.like}</button></p>
 
                 <div className="ui two buttons">
                     <Link to={`tools/${tool.id}`} className="ui basic button green"> Edit </Link>
@@ -76,7 +76,7 @@ class Tools extends Component {
         return (
             <div>
                  <div>
-                {toolsList === 0 ? emptyMessage : toolsList}
+                {this.props.myTools.length === 0 ? emptyMessage : toolsList}
             </div>
 
                 <Link to="/tools/new" className="add">Place New Tool AD</Link>

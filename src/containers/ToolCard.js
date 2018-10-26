@@ -10,7 +10,8 @@ export default function ToolCard({ tool }) {
       
    }
     return (
-      
+      <div>
+          </div>
     )
 }
 
