@@ -31,7 +31,7 @@ class Tools extends Component {
 
     handleClick() {
         this.setState(
-          {count: this.state.count++}
+          {count: this.state.count = this.state.count + 1}
         )
     }
 
