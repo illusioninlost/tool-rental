@@ -11,10 +11,28 @@ import ToolsList from './ToolsList';
 
 class Tools extends Component {
 
+    constructor(){
+        super()
+
+        this.state = {
+            count: 0
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+
+    }
+   
+
 
     componentDidMount() {
         if(this.props.myTools.length < 1){
         this.props.fetchTools()};
+    }
+
+    handleClick() {
+        this.setState(
+          {count: this.state.count++}
+        )
     }
 
    
@@ -23,26 +41,7 @@ class Tools extends Component {
         return (
             <div>
                 <ToolsList tools={this.props.myTools} />
-                {/* <Grid className="star">
-
-
-                    <Row className="show-grid">
-                        {this.props.myTools.map((t) => {
-
-                            return (
-                                <Col xs={6} md={4} >
-                                    <img className="toolpic" src={t.url} alt={t.name}/>
-                                    <p>{t.description}</p>
-                                    <p>&#36;{t.price}&#47;hour<span></span><button onClick={this.handleShow}> Details </button>  </p>
-                                    <p><button>Add to cart</button></p>
-                                </Col>
-
-                            )
-                        })}
-
-                    </Row>
-
-                </Grid> */}
+                <button onClick={this.handleClick}>{this.state.count}</button>
 
                 <Link to="/tools/new" className="add">Place New Tool AD</Link>
 
