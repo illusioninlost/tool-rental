@@ -31,11 +31,9 @@ class Tools extends Component {
         this.props.fetchTools()};
     }
 
-    // handleClick() {
-    //     this.setState(
-    //       {count: this.state.count = this.state.count + 1}
-    //     )
-    // }
+    handleClick(like, id) {
+        console.log(like, id) 
+     }
 
    
     render() {
@@ -46,7 +44,8 @@ class Tools extends Component {
         const resize = {fontSize:30, margin:0}
         const description = {fontSize:20, color: '#8f8762'}
         const price = {fontSize:25}
-     
+        
+       
        
       
     
@@ -54,14 +53,14 @@ class Tools extends Component {
             <div className="ui three cards" >
                 {this.props.myTools.map(tool =>   
                 
-                <div className="ui card">
+                <div className="ui card" key={tool.id}>
                 <div>
                     <img src={tool.url} alt={tool.name} className="toolpic thumbnail" />
                 </div>
                 <p style={resize}>{tool.name}</p>
                 <p style={description}>{tool.description}</p>
                 <p style={price}>&#36;{tool.price}&#47;hour<span></span> </p>
-                <p><button onClick={this.handleClick}>{tool.like}</button></p>
+                <p><button onClick={() => this.handleClick(tool.like, tool.id)}>{tool.like}</button></p>
 
                 <div className="ui two buttons">
                     <Link to={`tools/${tool.id}`} className="ui basic button green"> Edit </Link>
