@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTools } from '../actions/toolActions';
+import { fetchTools, increaseLike } from '../actions/toolActions';
 // import Item from '../components/item'
 // import { Grid, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import toolForm from './form'
 // import ToolsList from './ToolsList';
+
 
 
 
@@ -32,7 +33,8 @@ class Tools extends Component {
     }
 
     handleClick(like, id) {
-        console.log(like, id) 
+        const likes = like + 1
+        this.props.increaseLike(likes, id) 
      }
 
    
@@ -60,7 +62,7 @@ class Tools extends Component {
                 <p style={resize}>{tool.name}</p>
                 <p style={description}>{tool.description}</p>
                 <p style={price}>&#36;{tool.price}&#47;hour<span></span> </p>
-                <p><button onClick={() => this.handleClick(tool.like, tool.id)}>{tool.like}</button></p>
+                <p><button onClick={() => this.handleClick(tool.like, tool.id)}>&#128077;</button>&nbsp;{tool.like}</p>
 
                 <div className="ui two buttons">
                     <Link to={`tools/${tool.id}`} className="ui basic button green"> Edit </Link>
@@ -92,7 +94,8 @@ class Tools extends Component {
 }
 
 const mapDispatchToProps = {
-    fetchTools
+    fetchTools,
+    increaseLike
 }
 
 

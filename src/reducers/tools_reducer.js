@@ -22,7 +22,12 @@ export default function toolsReducer(state={tools:[], found:[]},action){
             const index = state.tools.findIndex(tool => tool.id === action.tool.id);
             return {...state, tools: state.tools.filter((tool,i) => i !== index)}
             
-
+        case "INCREASE_LIKE":
+            
+            const ref = state.tools.findIndex(tool => tool.id === action.tool.id);
+            state.tools.splice(ref,1,action.tool)
+            return {...state, tools:state.tools.map(tool => tool)}
+        
         default:
             return state;
     }

@@ -13,7 +13,8 @@ class toolForm extends Component {
         price: 0,
         url: '',
         errors: {},
-        loading: false
+        loading: false,
+        like: 0
     }
 
     handleOnChange = (event) => {
@@ -31,10 +32,10 @@ class toolForm extends Component {
         const isValid = Object.keys(errors).length === 0;
 
         if (isValid) {
-            const { name, description, price, url } = this.state;
-            console.log('A')
-            this.props.saveTool({ name, description, price, url })
-            console.log('B')
+            const { name, description, price, url, like } = this.state;
+          
+            this.props.saveTool({ name, description, price, url, like })
+            
             this.setState({ loading: true });
         }
 

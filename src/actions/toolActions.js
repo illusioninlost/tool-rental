@@ -39,7 +39,7 @@ export function fetchTools() {
 
 
 export function saveTool(tool) {
-    console.log('C')
+    
     return (dispatch) => {
         return fetch(`${API_URL}/tools`, {
             method: 'post',
@@ -50,12 +50,12 @@ export function saveTool(tool) {
         })
             .then(response => response.json())
             .then(tool => {
-                console.log('D')
+                
                 dispatch(addTool(tool))})
 
 
     }
-    console.log('E')
+    
 }
 
 export function fetchTool(id) {
@@ -99,3 +99,18 @@ export function editTool(tool) {
     }
 }
 
+export function increaseLike(like, id) {
+    return (dispatch) => {
+        return fetch(`${API_URL}/tools/${id}`, {
+            method: 'put',
+            body: JSON.stringify({like, id}),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(tool => dispatch({type: 'INCREASE_LIKE', tool: tool}) )
+
+
+    }
+}
