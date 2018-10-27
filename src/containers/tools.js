@@ -62,7 +62,7 @@ class Tools extends Component {
                 <p style={resize}>{tool.name}</p>
                 <p style={description}>{tool.description}</p>
                 <p style={price}>&#36;{tool.price}&#47;hour<span></span> </p>
-                <p><button onClick={() => this.handleClick(tool.like, tool.id)}>&#128077;</button>&nbsp;{tool.like}</p>
+                <p><button onClick={() => this.handleClick(tool.like, tool.id)}><span role="img" aria-label="thumbs-up">&#128077;</span></button>&nbsp;{tool.like}</p>
 
                 <div className="ui two buttons">
                     <Link to={`tools/${tool.id}`} className="ui basic button green"> Edit </Link>
