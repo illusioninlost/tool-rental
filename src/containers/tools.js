@@ -37,7 +37,7 @@ class Tools extends Component {
     sort() {
 
         const sorted = this.props.myTools.slice().sort(function (a, b) {
-            return a.like - b.like
+            return b.like - a.like
         })
         this.setState({ sort: sorted })
 
@@ -114,7 +114,7 @@ class Tools extends Component {
 
         return (
             <div>
-                <button onClick={() => this.sort()}> Sort </button> 
+                <button onClick={() => this.sort()}> Sort by Likes</button> 
                 {ren}
 
                 <Link to="/tools/new" className="add">Place New Tool AD</Link>
