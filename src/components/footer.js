@@ -7,7 +7,7 @@ render() {
 return (
  
    
-<Footer color="blue" className="font-small pt-4 mt-4 bright" style={{backgroundColor: '#49edff'}}>
+<Footer color="blue" className="font-small pt-4 mt-4 bright" style={{backgroundColor: '#A7E9EB'}}>
 <hr/>
   <Container fluid className="text-center text-md-left">
     <Row>
