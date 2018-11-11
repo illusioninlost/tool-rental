@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { saveTool } from '../actions/toolActions';
 import { Redirect } from 'react-router';
 import FooterPage from '../components/footer';
+import Head from '../components/head'
 
 class toolForm extends Component {
 
@@ -82,6 +83,7 @@ class toolForm extends Component {
         </form>)
 
         return (<div>
+            <Head/>
             {this.state.loading ? < Redirect to="/" /> : form}
             <FooterPage/>
         </div>

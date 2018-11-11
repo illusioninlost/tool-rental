@@ -13,10 +13,11 @@ const Head = () => {
     <Navbar style={navbar}>
       <Navbar.Header>
         <Navbar.Brand style={brand}>
-          <a href="/" style={size}>Tool Rental</a>
+          <span style={size}>Tool Rental</span>
         </Navbar.Brand>
       </Navbar.Header>
-      <Link to="/tools/new" className="navAdd">Place New Tool AD</Link>
+      <Link to="/" className="navAdd">Home</Link>
+      <Link to="/tools/new" className="navAdd">Place Tool AD</Link>
 
     </Navbar>
   )
