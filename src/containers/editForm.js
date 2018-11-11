@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { editTool, fetchTool } from '../actions/toolActions'
 import { Redirect } from 'react-router'
+import FooterPage from '../components/footer'
 
 class editForm extends Component {
     
@@ -92,12 +93,14 @@ class editForm extends Component {
                 <button className="ui primary button"> Update </button>
             </div>
 
-        </form>)
+        </form>
+        )
 
         return (
 
             <div>
                 {this.state.loading ? < Redirect to="/" /> : form}
+                <FooterPage />
             </div>
 
         )
