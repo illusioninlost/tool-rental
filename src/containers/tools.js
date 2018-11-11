@@ -115,7 +115,7 @@ class Tools extends Component {
                 <button onClick={() => this.sort()}> Sort by Likes</button> 
                 {ren}
 
-                <Link to="/tools/new" className="add">Place New Tool AD</Link>
+                <Link to="/tools/new" className="add">Got a Tool To Rent. Click Here.</Link>
 
 
             </div>
