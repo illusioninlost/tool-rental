@@ -19,11 +19,7 @@ const Item = ({tools}) => {
         
         {toolItem}
     )
-    // return(
-    //     <div>
-    //     nothing
-    //     </div>
-    // )
+   
 }
 
 export default Item;
